@@ -42,7 +42,7 @@ type UserAgent struct {
 func Parse(userAgent string) UserAgent {
 	// Test if this is a machine
 	type_ := Human
-	for crawerUserAgentPattern := range crawerUserAgentPatterns {
+	for _, crawerUserAgentPattern := range crawerUserAgentPatterns {
 		if crawerUserAgentPattern.MatchString(userAgent) {
 			type_ = Machine
 			break
